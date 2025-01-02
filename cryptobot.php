@@ -5,7 +5,7 @@ function cryptobot_config() {
             "Type" => "System",
             "Value" => "cryptobot"
         ),
-        "receiver" => array(
+        "token" => array(
             "FriendlyName" => "Token",
             "Type" => "text",
             "Size" => "128",
@@ -17,6 +17,9 @@ function cryptobot_config() {
 
 function cryptobot_link($params){
     $gatewayParams = getGatewayVariables('cryptobot');
+    if(!$gatewayParams['token']){
+        die('Not all data in the module settings are specified');
+    }
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://pay.crypt.bot/api/createInvoice?currency_type=fiat&fiat=USD&amount=".$params['amount']."&payload=".$params['invoiceid']."&paid_btn_name=callback&paid_btn_url=https://".$_SERVER['HTTP_HOST']);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
