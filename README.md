@@ -33,7 +33,7 @@ https://<YOUR WHMCS DOMAIN>/modules/gateways/callback/cryptobot.php
 
 #### From which IP addresses are notifications sent via webhook?
 
-Unfortunately, CryptoBot does not provide specific addresses. If you use a firewall (such as Cloudflare), create a custom WAF rule that will skip all requests sent to your handler URL(https://.../modules/gateways/callback/cryptobot.php).
+Unfortunately, CryptoBot does not provide specific addresses. If you use a firewall (such as [Cloudflare](https://cloudflare.com)), create a custom WAF rule that will skip all requests sent to your handler URL(https://.../modules/gateways/callback/cryptobot.php).
 
 #### I made a bypass rule for webhook, but that opened the backdoor to possible DDoS attacks. How to fix it?
 
@@ -42,7 +42,7 @@ Open [@CryptoBot](http://t.me/CryptoBot?start=pay), go to [Crypto Pay](https://t
 https://<YOUR WHMCS DOMAIN>/modules/gateways/callback/cryptobot.php?<RANDOM CHARACTERS WITHOUT SPACES>
 ```
 
-Characters after the ? sign count as GET parameters that only you know. Now make a custom WAF rule (e.g. via Cloudflare) that checks the full URL path:
+Characters after the ? sign count as GET parameters that only you know. Now make a custom WAF rule (e.g. via [Cloudflare](https://cloudflare.com)) that checks the full URL path:
 ```bash
 (starts_with(http.request.full_uri, "https://<YOUR WHMCS DOMAIN>/modules/gateways/callback/cryptobot.php?<RANDOM CHARACTERS WITHOUT SPACES>"))
 ```
