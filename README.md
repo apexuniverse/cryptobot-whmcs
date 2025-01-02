@@ -1,2 +1,2 @@
-# cryptobot-whmcs
- CryptoBot payment module for WHMCS client panel
+# CryptoBot for WHMCS
+CryptoBot payment module for WHMCS client panel
