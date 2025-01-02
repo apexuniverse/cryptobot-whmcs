@@ -11,7 +11,7 @@ The module is used in [ApexNodes](https://client.apexnodes.xyz) and [MadHost](ht
 
 ## Installation
 
-Upload the repository files to the following path:
+[Download the latest release](https://github.com/polen1kaa/cryptobot-whmcs/releases/tag/release) and upload the files from the archive to the following path:
 
 ```bash
 /var/www/whmcs/modules/gateways/
